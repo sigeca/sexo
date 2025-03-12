@@ -1,0 +1,12 @@
+RewriteEngine On
+RewriteBase /sexo/public/
+
+# Si la URL no apunta a un archivo o directorio, redirigir a index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+
+php_value error_reporting E_ALL
+php_flag display_errors On
+php_flag display_startup_errors On
